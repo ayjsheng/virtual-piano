@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Play this piano</title>
+	<link rel="stylesheet" type="text/css" href="global.css">
+</head>
+<body>
+		<h1 class="title">Play the Piano</h1>
+		<p class="intro">Oh, hello there. You might be wondering how to play this piano. It's super easy. All you have to do is hit the corresponding key on your keyboard. Or you can also click on the keys if you like. Happy composing.</p>
+		<p class="footer">Built by <a href="http://www.anniesheng.ca" target="_">Annie Sheng</a>. Read my <a href="http://anniesheng.ca/2016/12/11/im-doing-a-30-day-javascript-challenge/" target="_">process here</a>.</p>
+
+	<div class="piano">
+		<div data-key="65" class="key">
+      		<kbd><p class="pkeyx">A</p></kbd><br>
+      		<span class="sound"><p class="soundx">C</p></span>
+    	</div>
+  		<div data-key="87" class="key keyhc">
+      		<kbd><p class="pkey">W</p></kbd><br>
+      		<span class="sound">C♯</span>
+    	</div>
+   		<div data-key="83" class="key">
+      		<kbd><p class="pkeyx">S</p></kbd><br>
+      		<span class="sound"><p class="soundx">D</p></span>
+    	</div>
+   		<div data-key="69" class="key keyhd">
+      		<kbd><p class="pkey">E</p></kbd><br>
+      		<span class="sound">D♯</span>
+    	</div>
+   		<div data-key="68" class="key">
+      		<kbd><p class="pkeyx">D</p></kbd><br>
+      		<span class="sound"><p class="soundx">E</p></span>
+    	</div>
+   		<div data-key="70" class="key">
+      		<kbd><p class="pkeyx">F</p></kbd><br>
+      		<span class="sound"><p class="soundx">F</p></span>
+    	</div>
+   		<div data-key="82" class="key keyhf">
+      		<kbd><p class="pkey">R</p></kbd><br>
+      		<span class="sound">E♯</span>
+    	</div>
+   		<div data-key="71" class="key">
+      		<kbd><p class="pkeyx">G</p></kbd><br>
+      		<span class="sound"><p class="soundx">G</p></span>
+    	</div>
+   		<div data-key="84" class="key keyhg">
+      		<kbd><p class="pkey">T</p></kbd><br>
+      		<span class="sound">F♯</span>
+    	</div>
+   		<div data-key="72" class="key">
+      		<kbd><p class="pkeyx">H</p></kbd><br>
+      		<span class="sound"><p class="soundx">A</p></span>
+    	</div>
+   		<div data-key="89" class="key keyha">
+      		<kbd><p class="pkey">Y</p></kbd><br>
+      		<span class="sound">G♯</span>
+    	</div>
+   		<div data-key="74" class="key">
+      		<kbd><p class="pkeyx">J</p></kbd><br>
+      		<span class="sound"><p class="soundx">B</p></span>
+    	</div>
+	</div>
+
+	    <audio data-key="65" src="notes/c.wav"></audio>
+	    <audio data-key="87" src="notes/csharp.wav"></audio>
+	    <audio data-key="83" src="notes/d.wav"></audio>
+	    <audio data-key="69" src="notes/dsharp.wav"></audio>
+	    <audio data-key="68" src="notes/e.wav"></audio>
+	    <audio data-key="70" src="notes/fsharp.wav"></audio>
+	    <audio data-key="82" src="notes/f.wav"></audio>
+	    <audio data-key="71" src="notes/gsharp.wav"></audio>
+	    <audio data-key="84" src="notes/g.wav"></audio>
+	    <audio data-key="72" src="notes/asharp.wav"></audio>
+	    <audio data-key="89" src="notes/a.wav"></audio>
+	    <audio data-key="74" src="notes/b.wav"></audio2>
+
+  	<!-- <script>
+
+	window.addEventListener('keydown', function(e){
+	  playSound(e.keyCode);
+	});
+
+	function playSound(keyId){
+	  const audio = document.querySelector(`audio[data-key="${keyId}"]`);
+	  const key = document.querySelector(`.key[data-key="${keyId}"]`);
+	  if(!audio) return;
+	  audio.currentTime = 0;
+	  audio.play();
+	  key.classList.add('playing');	
+	}
+
+	function removeTransition(e){
+	  if(e.propertyName !== 'background-color')
+		return;
+	  this.classList.remove('playing');
+	}
+
+	const piano = document.querySelectorAll('.key');
+	piano.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+	const keyDivs = document.getElementsByClassName("key");
+
+	const playSoundFromClick = function(e) { 
+      const keyId = this.getAttribute("data-key");
+      playSound(keyId);
+	};
+
+	for (var i = 0; i < keyDivs.length; i++) {
+      keyDivs[i].addEventListener('click', playSoundFromClick);
+	}
+
+  	</script> -->
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
